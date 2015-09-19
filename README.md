@@ -1,6 +1,9 @@
 # Test Drive Go
 
-The purpose of this test drive is to understand the setup and capabilities of [Go](http://golang.org) the language.
+The purpose of this test drive is to understand the setup and capabilities of the [Go programming language](http://golang.org).  Before wasting your time, take a look at the resources used to make this test drive.
+
+* [The Go Programming Language Documentation](http://golang.org/doc)
+* [Go by Example](https://gobyexample.com)
 
 ## Setup
 
