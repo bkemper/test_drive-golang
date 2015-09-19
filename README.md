@@ -26,8 +26,26 @@ Most importantly, install [Golint](https://github.com/golang/lint#installation).
 
 Append to your `~/.vimrc` to lint after a save:
 
-```bash
+```
 " https://github.com/golang/lint#vim
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 ```
+
+## Scripting
+    
+Create `example.go` with:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   fmt.Println("Hello, World!")
+}
+```
+
+Run script:
+
+    $ go run example.go
