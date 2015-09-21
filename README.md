@@ -1,13 +1,15 @@
 # Test Drive Go
 
-The purpose of this test drive is to understand the setup and capabilities of the [Go programming language](http://golang.org).  Before wasting your time, take a look at the resources used to make this test drive.
+The purpose of this test drive is to understand the setup and capabilities of the [Go programming language](http://golang.org).  Before wasting your time, take a look at the resources used to fuel this test drive.
 
 * [The Go Programming Language Documentation](http://golang.org/doc)
 * [Go by Example](https://gobyexample.com)
 
 ## Setup
 
-Follow these [instructions](https://github.com/moovweb/gvm#installing) and install [Go Version Manager](https://github.com/moovweb/gvm).
+### Installation
+
+To easily install, manage, and work with multiple Go versions, install [Go Version Manager](https://github.com/moovweb/gvm) with these [instructions](https://github.com/moovweb/gvm#installing).
 
 Prepend to your `~/.bash_profile`:
 
@@ -17,17 +19,21 @@ Reload your profile:
 
     $ source ~/.bash_profile
 
-Install Go:
+Install latest Go version:
 
-    $ gvm install go1.4  --default
+    $ gvm install go1.4
     
 Set as default:
 
     $ gvm use go1.4 --default
 
-Most importantly, install [Golint](https://github.com/golang/lint#installation).
+### Linting
 
-Append to your `~/.vimrc` to lint after a save:
+To lint your code, install [Golint](https://github.com/golang/lint#installation).
+
+    $ go get -u github.com/golang/lint/golint
+
+Append to your `~/.vimrc` to print style mistakes after a save:
 
 ```
 " https://github.com/golang/lint#vim
@@ -35,9 +41,23 @@ set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 ```
 
-## Scripting
-    
-Create `example.go` with:
+### Documentation
+
+To view your program documentation, install [GoDoc](http://godoc.org/golang.org/x/tools/cmd/godoc).
+
+    $ go get -u golang.org/x/tools/cmd/godoc
+
+Refer to the [Godoc: documenting Go code](http://blog.golang.org/godoc-documenting-go-code) blog post for some background and comment convention.
+
+### Other Tools
+
+For other awesome tools, check out [Go Tools](https://github.com/golang/tools).
+
+## Capabilities
+
+### Run from source
+
+Create source file, `example.go`:
 
 ```go
 package main
@@ -45,10 +65,20 @@ package main
 import "fmt"
 
 func main() {
-   fmt.Println("Hello, World!")
+   fmt.Println("Test driving Go!")
 }
 ```
 
-Run script:
+Run:
 
     $ go run example.go
+
+### Run from binary
+
+Compile your source code to a binary:
+    
+    $ go build example.go
+
+Run:
+
+    $ ./example
