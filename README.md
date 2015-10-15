@@ -70,3 +70,7 @@ Compile your source code using [build](https://golang.org/cmd/go/#hdr-Compile_pa
 Run:
 
     $ ./bin/testdrive
+
+### Example Packages
+
+* [Basics](src/testdrive/basics/basics.go) - Importing packages, variables, functions, etc.
