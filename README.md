@@ -22,7 +22,7 @@ Reload your profile:
 Install latest Go version:
 
     $ gvm install go1.4
-    
+
 Set as default:
 
     $ gvm use go1.4 --default
@@ -57,28 +57,16 @@ For other awesome tools, check out [Go Tools](https://github.com/golang/tools).
 
 ### Run from source
 
-Create source file, `example.go`:
+Write a [program](src/testdrive/main.go) and use [run](https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program):
 
-```go
-package main
-
-import "fmt"
-
-func main() {
-   fmt.Println("Test driving Go!")
-}
-```
-
-Run:
-
-    $ go run example.go
+    $ go run src/testdrive/main.go
 
 ### Run from binary
 
-Compile your source code to a binary:
-    
-    $ go build example.go
+Compile your source code using [build](https://golang.org/cmd/go/#hdr-Compile_packages_and_dependencies):
+
+    $ go build -o bin/testdrive src/testdrive/main.go
 
 Run:
 
-    $ ./example
+    $ ./bin/testdrive
